@@ -20,11 +20,14 @@ Their API also provides access to data on many additional movies, actors and act
 
 A recommender system is an application of machine learning that produces individualized recommendations as output or has the effect of guiding the user in a personalized way to interesting objects in a larger space of possible options.
 
-# Content based recommender:  def This does not include any personalization and has no user data. This method is good for linking movies by underlying thematic elements. See analysis in the notebook for more information.
+# Content based recommender: 
+
+This does not include any personalization and has no user data. This method is good for linking movies by underlying thematic elements. See analysis in the notebook for more information.
 
 We use the pandas library to import our dataset and after pre-processing this data, we create tags for each movie. We compare these tags using the sklearn and create a similarity matrix using cosine similarity on bag of words. This matrix is accessed from streamlit using pickle.
 
-# Collaborative filtering based recommender: def This project is a first pass at using knn (k nearest neighbours) algorithm to predict user ratings of movies they haven't watched yet. Since my project doesnot have a login-register system yet, this user was assumed to be a default user and given a fixed id. Filtering was done using knn on basis of the IMDb scores of movies. The results were stored as json files to be accessed through streamlit.
+# Collaborative filtering based recommender: 
+This project is a first pass at using knn (k nearest neighbours) algorithm to predict user ratings of movies they haven't watched yet. Since my project doesnot have a login-register system yet, this user was assumed to be a default user and given a fixed id. Filtering was done using knn on basis of the IMDb scores of movies. The results were stored as json files to be accessed through streamlit.
 
 # app.py
 
@@ -40,8 +43,7 @@ On our homepage, the user is able to choose between select, movie and genre base
 ![image](https://user-images.githubusercontent.com/84243901/171042107-6815ee06-3a7d-4112-afbd-a74e0a85ac05.png)
 ![image](https://user-images.githubusercontent.com/84243901/171043309-2cec97a5-a012-4299-a83a-8810198db1c9.png)
 
-
-If the user chooses genre, the user is allowed to select however many genre they would want, using the multi-select drop-down menu of genres. Upon choosing these, the user can pick an IMDb score between 1-10 of the movies they would like to be recommended. Doing so, they are recommended n number of movies, by selecting n from a what streamlit function , based on knn algorithm along with the link to their IMDb pages.
+If the user chooses genre, the user is allowed to select however many genre they would want, using the multi-select drop-down menu of genres. Upon choosing these, the user can pick an IMDb score between 1-10 of the movies they would like to be recommended. Doing so, they are recommended n number of movies, by selecting n from a streamlit function , based on knn algorithm along with the link to their IMDb pages.
 ![image](https://user-images.githubusercontent.com/84243901/171043411-384b1d26-1470-41e7-a56a-5b8bd478ea3e.png)
 
 
